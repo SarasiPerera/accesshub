@@ -4,11 +4,25 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
+function getPasswordStrength(password: string): { label: string; color: string; score: number } {
+  let score = 0;
+  if (password.length >= 8) score++;
+  if (/[a-z]/.test(password)) score++;
+  if (/[A-Z]/.test(password)) score++;
+  if (/[!@#$%^&*]/.test(password)) score++;
+  if (password.length >= 12) score++;
+
+  if (score <= 1) return { label: "Weak", color: "bg-red-500", score };
+  if (score <= 3) return { label: "Medium", color: "bg-yellow-500", score };
+  return { label: "Strong", color: "bg-green-500", score };
+}
 export default function RegisterPage() {
   const router = useRouter();
   const [form, setForm] = useState({ email: "", username: "", password: "" });
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
+
+  const strength = getPasswordStrength(form.password);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -81,9 +95,24 @@ export default function RegisterPage() {
                 onChange={(e) => setForm({ ...form, password: e.target.value })}
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
-              <p className="text-xs text-gray-500 mt-1">
+                            <p className="text-xs text-gray-500 mt-1">
                 Min 8 characters, with uppercase, lowercase, and a special character.
               </p>
+              {form.password && (
+                <div className="mt-2">
+                  <div className="flex gap-1 h-1.5">
+                    {[1, 2, 3, 4, 5].map((i) => (
+                      <div
+                        key={i}
+                        className={`flex-1 rounded ${
+                          i <= strength.score ? strength.color : "bg-gray-200"
+                        }`}
+                      />
+                    ))}
+                  </div>
+                  <p className="text-xs mt-1 text-gray-600">{strength.label}</p>
+                </div>
+              )}
             </div>
 
             {error && <p className="text-red-600 text-sm">{error}</p>}
