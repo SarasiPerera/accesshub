@@ -26,8 +26,8 @@ export default function DashboardPage() {
   if (!user) return null;
 
   return (
-    <div className="min-h-screen bg-gray-50 p-8">
-      <div className="max-w-2xl mx-auto bg-white p-8 rounded-xl shadow-md">
+   <div className="min-h-screen bg-gradient-to-br from-indigo-600 via-purple-600 to-blue-600 p-8">
+      <div className="max-w-2xl mx-auto bg-white p-8 rounded-2xl shadow-2xl">
         <div className="flex justify-between items-center mb-6">
           <h1 className="text-2xl font-bold text-gray-900">Dashboard</h1>
           <button
