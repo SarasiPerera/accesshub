@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import Navbar from "@/components/Navbar";
 
 type User = { id: number; email: string; username: string; role: string };
 
@@ -19,7 +20,9 @@ export default function AdminPage() {
   }, [router]);
 
   return (
-    <div className="min-h-screen bg-gray-50 p-8">
+     <div className="min-h-screen flex flex-col bg-gradient-to-br from-indigo-600 via-purple-600 to-blue-600">
+      <Navbar />
+      <div className="flex-1 p-8">
       <div className="max-w-2xl mx-auto bg-white p-8 rounded-xl shadow-md">
         <h1 className="text-2xl font-bold text-gray-900 mb-6">Admin Panel — All Users</h1>
         <table className="w-full text-left text-sm">
@@ -40,6 +43,7 @@ export default function AdminPage() {
             ))}
           </tbody>
         </table>
+        </div>
       </div>
     </div>
   );
