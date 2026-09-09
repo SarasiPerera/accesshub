@@ -123,7 +123,7 @@ export default function RegisterPage() {
 
             <button
               type="submit"
-              className="w-full bg-blue-600 text-white py-2 rounded-md font-medium hover:bg-blue-700 transition"
+              className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-2 rounded-md font-medium hover:from-indigo-700 hover:to-purple-700 transition"
             >
               Register
             </button>
@@ -132,7 +132,7 @@ export default function RegisterPage() {
 
         <p className="text-sm text-gray-600 mt-4 text-center">
           Already have an account?{" "}
-          <Link href="/login" className="text-blue-600 hover:underline">
+          <Link href="/login" className="text-indigo-600 hover:underline">
             Log in
           </Link>
         </p>
