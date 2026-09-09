@@ -7,6 +7,9 @@ export default function Navbar() {
         AccessHub
       </Link>
       <div className="flex gap-6">
+        <Link href="/" className="text-gray-700 hover:text-indigo-600 font-medium">
+          Home
+        </Link>
         <Link href="/login" className="text-gray-700 hover:text-indigo-600 font-medium">
           Login
         </Link>
