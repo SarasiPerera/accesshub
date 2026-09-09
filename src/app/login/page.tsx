@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import Navbar from "@/components/Navbar";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -30,7 +31,10 @@ export default function LoginPage() {
   };
 
   return (
-        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-600 via-purple-600 to-blue-600 px-4">
+     <div className="min-h-screen flex flex-col bg-gradient-to-br from-indigo-600 via-purple-600 to-blue-600">
+      <Navbar />
+      <div className="flex-1 flex items-center justify-center px-4">
+
             <div className="w-full max-w-sm bg-white p-8 rounded-2xl shadow-2xl">
         <h1 className="text-2xl font-bold text-gray-900 mb-6 text-center">
           Log in
@@ -79,6 +83,7 @@ export default function LoginPage() {
             Register
           </Link>
         </p>
+        </div>
       </div>
     </div>
   );
