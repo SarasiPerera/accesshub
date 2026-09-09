@@ -24,7 +24,7 @@ export default function AdminPage() {
       <Navbar />
       <div className="flex-1 p-8">
       <div className="max-w-2xl mx-auto bg-white p-8 rounded-xl shadow-md">
-        <h1 className="text-2xl font-bold text-gray-900 mb-6">Admin Panel — All Users</h1>
+        <h1 className="text-2xl font-bold text-gray-900 mb-6">Admin Panel - All Users</h1>
         <table className="w-full text-left text-sm">
           <thead>
             <tr className="border-b text-gray-500">
