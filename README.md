@@ -1,4 +1,4 @@
-﻿# AccessHub — Authentication System with Role-Based Access Control
+# AccessHub � Authentication System with Role-Based Access Control
 
 AccessHub is a full-stack authentication system built with Next.js, Prisma, and PostgreSQL. It supports user registration, login, and role-based access control (RBAC), distinguishing between regular users and admins.
 
@@ -93,4 +93,14 @@ This starts a local Postgres instance and prints a connection string to use as D
 
 ## Screenshots
 
-(Add screenshots here: registration page, login page, dashboard, admin panel)
+### Register
+![Register Page](screenshots/register.png)
+
+### Login
+![Login Page](screenshots/login.png)
+
+### Dashboard
+![Dashboard](screenshots/dashboard.png)
+
+### Admin Panel
+![Admin Panel](screenshots/admin.png)
